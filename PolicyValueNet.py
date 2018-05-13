@@ -214,7 +214,7 @@ class ConvNet(nn.Module):
     """Conv Layers"""
 
     def __init__(self, board_width, board_height):
-        super(SimpleNet, self).__init__()
+        super(ConvNet, self).__init__()
 
         self.board_width = board_width
         self.board_height = board_height
