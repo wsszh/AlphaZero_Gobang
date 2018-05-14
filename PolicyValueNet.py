@@ -219,7 +219,7 @@ class ConvNet(nn.Module):
         self.board_width = board_width
         self.board_height = board_height
         # common layers
-        n = 1 # 最开始是1
+        n = 2 # 最开始是1
         common_kernel_size = 2 * n + 1
         self.conv1 = nn.Conv2d(4, 32, kernel_size=common_kernel_size, padding=n)
         self.conv2 = nn.Conv2d(32, 64, kernel_size=common_kernel_size, padding=n)
