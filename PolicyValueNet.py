@@ -219,10 +219,11 @@ class ConvNet(nn.Module):
         self.board_width = board_width
         self.board_height = board_height
         # common layers
-        common_kernel_size = 4 # 最开始是3
-        self.conv1 = nn.Conv2d(4, 32, kernel_size=common_kernel_size, padding=1)
-        self.conv2 = nn.Conv2d(32, 64, kernel_size=common_kernel_size, padding=1)
-        self.conv3 = nn.Conv2d(64, 128, kernel_size=common_kernel_size, padding=1)
+        n = 1 # 最开始是1
+        common_kernel_size = 2 * n + 1
+        self.conv1 = nn.Conv2d(4, 32, kernel_size=common_kernel_size, padding=n)
+        self.conv2 = nn.Conv2d(32, 64, kernel_size=common_kernel_size, padding=n)
+        self.conv3 = nn.Conv2d(64, 128, kernel_size=common_kernel_size, padding=n)
         # action policy layers
         self.act_conv1 = nn.Conv2d(128, 4, kernel_size=1)
         self.act_fc1 = nn.Linear(4 * board_width * board_height, board_width * board_height)
