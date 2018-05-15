@@ -173,6 +173,7 @@ class TrainPipeline():
             self.config.cur_best_alphazero_store_filename = "tmp/epochs-{0}-opponent-{1}-win-{2:.2f}.pkl".format(epochs,
                                                                                                                  self.config.evaluate_opponent,
                                                                                                                  win_ratio)
+            pickle.dump(self.config, open(self.config.cur_best_alphazero_store_filename, 'wb'))
             pickle.dump(self.config, open(self.config.local_model_path + self.config.cur_best_alphazero_store_filename, 'wb'))
 
 
